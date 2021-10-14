@@ -1,3 +1,23 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+      "prettier/prettier": "error",
+      "react/react-in-jsx-scope": "off",
+      "func-names":"off",
+      "react/jsx-props-no-spreading":"off",
+     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+     "import/no-extraneous-dependencies": "off",
+     "no-unused-vars": "warn",
+     "react/require-default-props": "off",
+     "react/forbid-prop-types": "off",
+     "new-cap": ["error", { "newIsCap": false }],
+     "required": {
+      "some": [ "nesting", "id" ]
+  }
+  },
+  "env": {
+      "browser": true,
+      "node": true
+  }
 }
