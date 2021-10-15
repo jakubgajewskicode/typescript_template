@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
-import { device } from '../../utils/media';
+import { device } from './media';
 
-const ItemContainer = styled.div`
+export const ItemContainer = styled.div`
   grid-column: span 8;
   text-align: center;
   cursor: pointer;
   transition: opacity 0.7s ease;
+  padding: 20px;
 
   @media ${device.mobileL} {
     grid-column: span 5;
@@ -20,5 +21,3 @@ const ItemContainer = styled.div`
     opacity: 0.5;
   }
 `;
-
-export { ItemContainer };

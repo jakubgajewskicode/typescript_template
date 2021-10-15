@@ -1,19 +1,58 @@
-const Basket = ({ data, slotId, setSendItemData }: any) => {
-  return (
-    <section>
-      <h2>Your Basket</h2>
+import {
+  StyledSection,
+  ButtonWrapper,
+  Div,
+  Title,
+  Flex,
+  SlotsWrapper,
+  WorkerDetails,
+} from './ui';
+import { Button } from '../../utils/button';
 
-      {data.map((item: any) => (
-        <section key={item.id}>
-          <div>worker name: {item.name}</div>
-          <div>worker rating: {item.rating}</div>
-          {item.isNew && <li>New Employee</li>}
-          <div>worker ID: {item.id}</div>
-          <div>slot ID: {slotId}</div>
-        </section>
-      ))}
-      <button onClick={() => setSendItemData([])}>Reset your order</button>
-    </section>
+const Basket = ({ data, setSendItemData, Slots, setAddSlotToArray }: any) => {
+  return (
+    <>
+      <section>
+        <Title>
+          <h2>Your Basket</h2>
+        </Title>
+        {data.length >= 1 ? (
+          <>
+            <Flex>
+              <WorkerDetails>
+                {data.map((item: any) => (
+                  <StyledSection key={item.id}>
+                    <div>{item.name}</div>
+                    <div>worker rating: {item.rating}</div>
+                    {item.isNew && <div>New Employee</div>}
+                    <div>worker ID: {item.id}</div>
+                  </StyledSection>
+                ))}
+              </WorkerDetails>
+
+              <SlotsWrapper>
+                {Slots.map((slot: any) => (
+                  <p key={slot}> Slot id: {slot}</p>
+                ))}
+              </SlotsWrapper>
+            </Flex>
+
+            <ButtonWrapper>
+              <Button
+                onClick={() => {
+                  setSendItemData([]);
+                  setAddSlotToArray([]);
+                }}
+              >
+                Reset your order
+              </Button>
+            </ButtonWrapper>
+          </>
+        ) : (
+          <Div>Nothing to show, add product to the basket</Div>
+        )}
+      </section>
+    </>
   );
 };
 

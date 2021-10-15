@@ -1,9 +1,11 @@
-import { BookingSlotWrapper, ItemContainer, Item, Image } from './ui';
+import { Grid } from '../../utils/grid';
+import { Image } from '../../utils/image';
+import { ItemContainer } from '../../utils/imageContainer';
 
 import { H2, P } from '../../utils/Typography';
 const ActiveBookingSlots = ({ slots, setActiveWorker, setItemId }: any) => {
   return (
-    <BookingSlotWrapper>
+    <Grid>
       {slots.map((item: any) => (
         <ItemContainer
           key={item.id}
@@ -12,18 +14,12 @@ const ActiveBookingSlots = ({ slots, setActiveWorker, setItemId }: any) => {
             setItemId(item.id);
           }}
         >
-          <Item>
-            <Image src="https://picsum.photos/200" alt={item.id} />
-          </Item>
-          <Item>
-            <H2>{item.localisedTime}</H2>
-          </Item>
-          <Item>
-            <P>{item.price}</P>
-          </Item>
+          <Image src="https://picsum.photos/200" alt={item.id} />
+          <H2>{item.localisedTime}</H2>
+          <P>{item.price}</P>
         </ItemContainer>
       ))}
-    </BookingSlotWrapper>
+    </Grid>
   );
 };
 

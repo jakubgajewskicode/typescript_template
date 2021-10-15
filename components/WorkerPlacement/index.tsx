@@ -1,45 +1,70 @@
+import { useState, useEffect } from 'react';
+
+import { Grid } from '../../utils/grid';
+import { Image } from '../../utils/image';
+import { H2, P } from '../../utils/Typography';
+import { ItemContainer } from '../../utils/imageContainer';
+import { Button } from '../../utils/button';
+
+import { SectionSubHeader, ThanksMsg, StyledP } from './ui';
+
 const WorkerPlacement = ({
   SendItemData,
   setSendItemData,
-  setaddToBasket,
   WorkerListActive,
   setActiveWorker,
-  setItemId,
+  slotId,
+  Slots,
+  setAddSlotToArray,
 }: any) => {
+  const [thanks, setThanks] = useState(false);
+
+  useEffect(() => {
+    if (thanks === true) {
+      setTimeout(() => {
+        setThanks(false);
+      }, 2000);
+    }
+  }, [thanks]);
+
   return (
     <>
-      <>
-        <button
+      <SectionSubHeader>
+        <h1>Available Workers</h1>
+        <Button
           onClick={() => {
             setActiveWorker(true);
-            setItemId(null);
           }}
         >
           Go back
-        </button>
-        <div>
-          Available Workers
-          <ul>
-            {WorkerListActive.map((nameList: any) => {
-              return (
-                <div key={nameList.id}>
-                  <li>{nameList.name}</li>
-                  Rating:<li>{nameList.rating}</li>
-                  {nameList.isNew && <li>New Employee</li>}
-                  <button
-                    onClick={() => {
-                      setaddToBasket(true);
-                      setSendItemData([...SendItemData, nameList]);
-                    }}
-                  >
-                    Add to the basket
-                  </button>
-                </div>
-              );
-            })}
-          </ul>
-        </div>
-      </>
+        </Button>
+      </SectionSubHeader>
+
+      {thanks ? (
+        <ThanksMsg>
+          <StyledP>Thank you, your item is added to your basket 🏅</StyledP>
+        </ThanksMsg>
+      ) : (
+        <Grid>
+          {WorkerListActive.map((nameList: any) => {
+            return (
+              <ItemContainer
+                onClick={() => {
+                  setSendItemData([...SendItemData, nameList]);
+                  setAddSlotToArray([...Slots, slotId]);
+                  setThanks(true);
+                }}
+                key={nameList.id}
+              >
+                <Image src="https://picsum.photos/200" alt={nameList.name} />
+                <H2>{nameList.name}</H2>
+                Rating:<P>{nameList.rating}</P>
+                {nameList.isNew && <P>New Employee</P>}
+              </ItemContainer>
+            );
+          })}
+        </Grid>
+      )}
     </>
   );
 };

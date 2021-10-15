@@ -9,6 +9,7 @@ export const Button = styled.button`
   border-radius: 3px;
   cursor: pointer;
   color: #fff;
+  transition: opacity 0.7s ease;
 
   :focus {
     outline: 0;
@@ -19,5 +20,9 @@ export const Button = styled.button`
     transform: translateY(4px);
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
     border-bottom: none;
+  }
+
+  :hover {
+    opacity: 0.7;
   }
 `;
