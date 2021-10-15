@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basket renders renders 1`] = `
+<Fragment>
+  <section>
+    <ui__Title>
+      <h2>
+        Your Basket
+      </h2>
+    </ui__Title>
+    <ui__Div>
+      Nothing to show, add product to the basket
+    </ui__Div>
+  </section>
+</Fragment>
+`;

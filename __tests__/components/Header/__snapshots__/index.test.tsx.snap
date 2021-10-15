@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basket renders renders 1`] = `
+<ui__Section>
+  <h1>
+    Hilton Booking system *****
+  </h1>
+  <div
+    onClick={[Function]}
+  >
+    <ui__SvgIcon>
+      <svg
+        height="60"
+        viewBox="0 0 40 1"
+        width="60"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          fill="none"
+          fillRule="evenodd"
+          stroke="#000"
+          strokeWidth="2"
+        >
+          <path
+            d="M1.227 6l1.855 9h10.836l1.855-9H1.227zM8.5 5V0"
+          />
+        </g>
+      </svg>
+    </ui__SvgIcon>
+  </div>
+</ui__Section>
+`;
