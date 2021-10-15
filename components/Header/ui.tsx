@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Header = styled.header`
+const Section = styled.header`
   display: flex;
   justify-content: space-between;
 `;
@@ -13,4 +13,4 @@ const SvgIcon = styled.div`
   }
 `;
 
-export { Header, SvgIcon };
+export { Section, SvgIcon };

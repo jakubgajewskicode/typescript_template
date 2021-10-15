@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
+import { device } from '../../utils/media';
+
 const fadeIn = keyframes`from { opacity: 0; }`;
 
 export const Container = styled.div`
@@ -12,11 +14,15 @@ export const Overlay = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90vh;
+  width: 90vw;
   height: 50vh;
   outline: 0;
   z-index: 1000;
   box-shadow: 6.4px 12.8px 12.8px hsl(0deg 0% 0% / 0.3);
+
+  @media ${device.tablet} {
+    width: 60vw;
+  }
 `;
 export const Dialog = styled.div`
   background: #dbdbdb;
