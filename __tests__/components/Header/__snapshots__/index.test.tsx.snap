@@ -6,7 +6,9 @@ exports[`Basket renders renders 1`] = `
     Hilton Booking system *****
   </h1>
   <div
+    aria-label="basket"
     onClick={[Function]}
+    tabIndex={0}
   >
     <ui__SvgIcon>
       <svg

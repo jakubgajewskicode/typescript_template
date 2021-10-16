@@ -6,7 +6,7 @@ const data = {
   slots: [],
   setSendItemData: false,
   setItemId: 3,
-  Slots: [],
+  SlotsArray: [],
   setAddSlotToArray: false,
 };
 
@@ -17,7 +17,7 @@ describe('Basket renders', () => {
         data={data.slots}
         setSendItemData={data.setSendItemData}
         setItemId={data.setItemId}
-        Slots={data.Slots}
+        SlotsArray={data.SlotsArray}
         setAddSlotToArray={data.setAddSlotToArray}
       />
     );

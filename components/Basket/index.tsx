@@ -9,7 +9,12 @@ import {
 } from './ui';
 import { Button } from '../../utils/button';
 
-const Basket = ({ data, setSendItemData, Slots, setAddSlotToArray }: any) => {
+const Basket = ({
+  data,
+  setSendItemData,
+  SlotsArray,
+  setAddSlotToArray,
+}: any) => {
   return (
     <>
       <section>
@@ -31,7 +36,7 @@ const Basket = ({ data, setSendItemData, Slots, setAddSlotToArray }: any) => {
               </WorkerDetails>
 
               <SlotsWrapper>
-                {Slots.map((slot: any) => (
+                {SlotsArray.map((slot: any) => (
                   <p key={slot}> Slot id: {slot}</p>
                 ))}
               </SlotsWrapper>

@@ -16,7 +16,7 @@ const HomePage = ({ slots, workers, availableWorkers }: IProps) => {
   const [slotId, setSlotId] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState<Boolean>(false);
   const [SendSlotID, setSendSlotData] = useState<any>([]);
-  const [Slots, setAddSlotToArray] = useState<any>([]);
+  const [SlotsArray, setAddSlotToArray] = useState<any>([]);
 
   useEffect(() => {
     if (!activeWorker) {
@@ -60,7 +60,7 @@ const HomePage = ({ slots, workers, availableWorkers }: IProps) => {
             SendSlotID={SendSlotID}
             setSendSlotData={setSendSlotData}
             slotId={slotId}
-            Slots={Slots}
+            SlotsArray={SlotsArray}
             setAddSlotToArray={setAddSlotToArray}
           />
         )}
@@ -70,7 +70,7 @@ const HomePage = ({ slots, workers, availableWorkers }: IProps) => {
             <Basket
               setSendItemData={setSendItemData}
               data={SendItemData}
-              Slots={Slots}
+              SlotsArray={SlotsArray}
               setAddSlotToArray={setAddSlotToArray}
             />
           </Modal>

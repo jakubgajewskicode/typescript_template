@@ -14,7 +14,7 @@ const WorkerPlacement = ({
   WorkerListActive,
   setActiveWorker,
   slotId,
-  Slots,
+  SlotsArray,
   setAddSlotToArray,
 }: any) => {
   const [thanks, setThanks] = useState(false);
@@ -52,7 +52,7 @@ const WorkerPlacement = ({
                 tabIndex={0}
                 onClick={() => {
                   setSendItemData([...SendItemData, nameList]);
-                  setAddSlotToArray([...Slots, slotId]);
+                  setAddSlotToArray([...SlotsArray, slotId]);
                   setThanks(true);
                 }}
                 key={nameList.id}
