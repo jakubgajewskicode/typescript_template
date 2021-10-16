@@ -3,6 +3,7 @@ import { Image } from '../../utils/image';
 import { ItemContainer } from '../../utils/imageContainer';
 
 import { H2, P } from '../../utils/Typography';
+
 const ActiveBookingSlots = ({ slots, setActiveWorker, setItemId }: any) => {
   return (
     <Grid>
