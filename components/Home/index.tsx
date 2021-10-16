@@ -6,13 +6,15 @@ import ActiveBookingSlots from '../ActiveBookingSlots';
 import WorkerPlacement from '../WorkerPlacement';
 import Basket from '../Basket';
 
-const HomePage = ({ slots, workers, availableWorkers }: any) => {
-  const [activeWorker, setActiveWorker] = useState(true);
-  const [itemID, setItemId] = useState<any>([null]);
+import { IProps } from '../../types/home';
+
+const HomePage = ({ slots, workers, availableWorkers }: IProps) => {
+  const [activeWorker, setActiveWorker] = useState<Boolean>(true);
+  const [itemID, setItemId] = useState<Number[]>([]);
   const [WorkerListActive, setWorkerListActive] = useState(Array);
   const [SendItemData, setSendItemData] = useState<any>([]);
   const [slotId, setSlotId] = useState<any>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState<Boolean>(false);
   const [SendSlotID, setSendSlotData] = useState<any>([]);
   const [Slots, setAddSlotToArray] = useState<any>([]);
 

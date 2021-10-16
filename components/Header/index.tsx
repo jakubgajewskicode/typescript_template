@@ -4,7 +4,11 @@ const Header = ({ setIsModalOpen }: any) => {
   return (
     <Section>
       <h1>Hilton Booking system *****</h1>
-      <div onClick={() => setIsModalOpen(true)}>
+      <div
+        aria-label="basket"
+        tabIndex={0}
+        onClick={() => setIsModalOpen(true)}
+      >
         <SvgIcon>
           <svg
             width="60"

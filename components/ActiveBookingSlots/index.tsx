@@ -8,6 +8,7 @@ const ActiveBookingSlots = ({ slots, setActiveWorker, setItemId }: any) => {
     <Grid>
       {slots.map((item: any) => (
         <ItemContainer
+          tabIndex={0}
           key={item.id}
           onClick={() => {
             setActiveWorker(false);

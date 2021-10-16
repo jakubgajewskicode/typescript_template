@@ -49,6 +49,7 @@ const WorkerPlacement = ({
           {WorkerListActive.map((nameList: any) => {
             return (
               <ItemContainer
+                tabIndex={0}
                 onClick={() => {
                   setSendItemData([...SendItemData, nameList]);
                   setAddSlotToArray([...Slots, slotId]);

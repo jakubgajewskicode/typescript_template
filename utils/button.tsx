@@ -11,9 +11,6 @@ export const Button = styled.button`
   color: #fff;
   transition: opacity 0.7s ease;
 
-  :focus {
-    outline: 0;
-  }
   :active {
     -ms-transform: translateY(4px);
     -webkit-transform: translateY(4px);
