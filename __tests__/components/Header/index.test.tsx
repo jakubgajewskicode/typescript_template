@@ -1,18 +1,15 @@
 import { shallow } from 'enzyme';
 
 import Header from '../../../components/Header';
+import { H1 } from '../../../components/Header/ui';
 
-const data = {
-  setIsModalOpen: false,
-};
-
-describe('Basket renders', () => {
+describe('Header renders', () => {
   test('renders', () => {
-    const header = shallow(<Header setIsModalOpen={data.setIsModalOpen} />);
-    const H1 = header.find('h1');
+    const header = shallow(<Header />);
+    const H1Wrapper = header.find(H1);
 
     expect(header).toMatchSnapshot();
-    expect(H1).toHaveLength(1);
-    expect(H1.text()).toEqual('Hilton Booking system *****');
+    expect(H1Wrapper).toHaveLength(1);
+    expect(H1Wrapper.text()).toEqual('Property search tool');
   });
 });

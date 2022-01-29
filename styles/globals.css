@@ -6,6 +6,8 @@ body {
   padding: 0 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer:ital@0;1&family=Lato:ital,wght@1,300&display=swap');
+
 @font-face {
   font-family: 'Lato';
   font-style: normal;

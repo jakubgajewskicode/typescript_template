@@ -5,10 +5,7 @@ import styled from 'styled-components';
 
 const PageLayout = styled.div`
   box-sizing: border-box;
-  height: 100%;
-  position: relative;
-  width: 85%;
-  margin: 0 auto;
+  padding: 20px;
 `;
 
 function MyApp({ Component, pageProps }: AppProps) {
