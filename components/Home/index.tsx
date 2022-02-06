@@ -1,4 +1,4 @@
-import { useState, useEffect, ChangeEvent, Fragment } from 'react';
+import { useState, useEffect, ChangeEvent, Fragment, useRef } from 'react';
 
 import {
   Form,
@@ -46,7 +46,7 @@ const Home = () => {
   const [propertyDetails, setDetails] = useState<PropertyDetailsTypes[]>([]);
   const [selectedValue, setSelectedValue] = useState<SelectedTypes[]>([]);
 
-  const [props, setProps] = useState<propertyPropTypes>({
+  let props = useRef<propertyPropTypes>({
     address: '',
     id: '',
     propertyType: undefined,
@@ -57,7 +57,7 @@ const Home = () => {
 
     (async () => {
       try {
-        const products = await fetchProperties(props);
+        const products = await fetchProperties(props.current);
         setCurrentProperties(products);
       } catch (error) {
         console.log('error');
@@ -94,27 +94,6 @@ const Home = () => {
     })();
   }, [currentProperties]);
 
-  const handleTypeClick = (value: any) => {
-    setProps((state) => {
-      return {
-        ...state,
-        propertyType: value,
-      };
-    });
-  };
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-
-    e.persist();
-    setProps((state) => {
-      return {
-        ...state,
-        address: e.target.value,
-      };
-    });
-  };
-
   const handleCheckboxClick = (value: string) => {
     setSelectedValue((prevState: any) => [...prevState, value]);
 
@@ -133,7 +112,7 @@ const Home = () => {
             <StyledUl>
               <StyledLi
                 onClick={() => {
-                  handleTypeClick(undefined);
+                  props.current.propertyType = undefined;
                 }}
               >
                 All
@@ -141,7 +120,7 @@ const Home = () => {
               {propertyListType.propertyTypes.map((item: any, i: number) => (
                 <StyledLi
                   onClick={() => {
-                    handleTypeClick(item.value);
+                    props.current.propertyType = item.value;
                   }}
                   key={i}
                 >
@@ -155,9 +134,8 @@ const Home = () => {
           <StyledLabel htmlFor="search">Search</StyledLabel>
           <Form onSubmit={handleOnSubmit}>
             <Input
-              value={props.address}
               onChange={(e) => {
-                handleInputChange(e);
+                props.current.address = e.target.value;
               }}
               placeholder="Address"
               type="text"
