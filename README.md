@@ -6,7 +6,7 @@
 
 ## General info
 
-Sample Property search Tool
+Typescript template
 
 ## Technologies
 
